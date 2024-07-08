@@ -1,0 +1,27 @@
+<app-searchbar></app-searchbar>
+<!-- string interpolation -->
+<div>
+    <!-- <img [src]="product.image">
+    <p>name is {{product.name}}</p>
+    
+    <p>price is ${{product.price}}</p>
+    
+    <p>discount is {{product.discount + '%'}}</p>
+    
+    <p>discounted price is ${{ getDiscountPrice() }}</p>
+    
+    <p>{{product.stock > 0 ? "In stock" : "Not available"}} </p>
+    <input [value] ="product.name">
+    <input bind-value ="product.name" [attr.aria-hidden]="" [(ngModel)]="product.name">
+    <br>
+    <span class="mt-3"><button class="btn btn-outline-danger" (click) ="onDecrement()" [disabled]="decrementDisplay">-</button> {{inCart}} <button class="btn btn-outline-danger" (click)="onIncrement()" [disabled]="incrementDisplay">+</button> </span>
+    <br>
+    <button class="btn btn-outline-primary" [disabled] = "!(product.stock >0)">Buy Now </button> -->
+
+    <!-- <div *ngFor ="let item of names"> 
+        <p>Name is {{item}}</p>
+    </div> -->
+<app-product class=" d-flex row gap-2 justify-content-center" *ngFor="let product of products; let i=index" [product]="product">
+  
+</app-product>
+ 

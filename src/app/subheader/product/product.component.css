@@ -1,0 +1,18 @@
+.card{
+    border-color: green;
+    }
+    .coming-soon {
+        border-color: #f39c12;
+    }
+    
+    .coming-soon-badge {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: #f39c12;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 0.8em;
+        font-weight: bold;
+    }

@@ -1,0 +1,14 @@
+<div class="col-md-3 col-6 m-3" [ngClass]="{'card':true ,'coming-soon':product.discount}">
+    <img class="card-img-top  h-50 mt-2 rounded-3" [src]="product.imageUrl" alt="{{ product.name }}">
+    <div class="card-body">
+        <!-- {{i+1}} -->
+        <h2>{{ product.name }}</h2>
+        <p>{{ product.description }}</p>
+        <p>Category: {{ product.category }}</p>
+        <p>Price: ${{ product.price }}</p>
+        <span *ngIf="product.discount">
+            <div class="coming-soon-badge">{{product.discount}}% off</div>
+        </span>
+
+    </div>
+</div>
