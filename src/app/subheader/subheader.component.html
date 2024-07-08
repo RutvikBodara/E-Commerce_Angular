@@ -21,7 +21,9 @@
     <!-- <div *ngFor ="let item of names"> 
         <p>Name is {{item}}</p>
     </div> -->
-<app-product class=" d-flex row gap-2 justify-content-center" *ngFor="let product of products; let i=index" [product]="product">
-  
-</app-product>
+    
+    <div class="d-flex justify-content-center  gap-2" [ngClass]="{row:true}">
+        <app-product [ngClass]="{'card':true ,'coming-soon':product.discount ,'col-md-3':true,'col-6':true,'m-3':true}" *ngFor="let product of products; let i=index" [product]="product">
+        </app-product>
+    </div>
  
