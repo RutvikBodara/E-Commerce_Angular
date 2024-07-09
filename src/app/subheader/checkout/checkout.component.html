@@ -1,0 +1,9 @@
+<p>checkout works!</p>
+
+{{currentProductDetail.name}}
+<ng-container *ngIf="currentProductDetail.available; else notifyMe">
+    <button class="btn btn-danger m-2">Add To Cart</button>
+</ng-container>
+<ng-template #notifyMe>
+    <button class="btn btn-danger m-2">Notify Me</button>
+</ng-template>

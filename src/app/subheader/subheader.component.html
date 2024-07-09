@@ -1,6 +1,33 @@
-<app-searchbar></app-searchbar>
+<app-searchbar (onSearchChanged) ="onSearchChanged($event)"></app-searchbar>
+<app-filter [all]="all" 
+            [inStock]="inStock" 
+            [outOfStock]="outOfStock"
+            (filterChange)="parentFilterChange($event)"
+            >
+</app-filter>
+<app-checkout [currentProductDetail] = "ProductDetail"  *ngIf="ProductDetail !== undefined">
+</app-checkout>
+<!-- 
+<app-featured-brand>
+    <h1 class="title">Brand1</h1>
+    <button class="typebtn btn btn-primary">Contact Us</button>
+</app-featured-brand>
+<app-featured-brand>
+    <h1 class="title">Brand2</h1>
+    <button class="typebtn btn btn-primary">Visit Us</button>
+</app-featured-brand>
+<app-featured-brand>
+    <h1 class="title">Brand3</h1>
+    <button class="typebtn btn btn-primary">Buy now</button>
+</app-featured-brand> -->
+<!-- <ng-template #demoTemplate>
+    <p>i am here to learn angular</p>
+</ng-template>
+<div *ngTemplateOutlet ="demoTemplate">
+</div> -->
 <!-- string interpolation -->
 <div>
+
     <!-- <img [src]="product.image">
     <p>name is {{product.name}}</p>
     
@@ -21,9 +48,21 @@
     <!-- <div *ngFor ="let item of names"> 
         <p>Name is {{item}}</p>
     </div> -->
-    
-    <div class="d-flex justify-content-center  gap-2" [ngClass]="{row:true}">
-        <app-product [ngClass]="{'card':true ,'coming-soon':product.discount ,'col-md-3':true,'col-6':true,'m-3':true}" *ngFor="let product of products; let i=index" [product]="product">
-        </app-product>
-    </div>
- 
+    <!-- reference check -->
+    <!-- <input #inputSearch>
+    <button class="btn btn-primary" (click)="testReference()" >reference check </button> -->
+
+    <!-- <input value="1" #DemoChild>
+    <input value="2" #DemoChild>
+    <input value="3" #DemoChild>
+    <button class="btn btn-danger" (click)="Run()">Click</button> -->
+    <!-- [hidden]="product.available.toString() !== currentFilter && currentFilter !== 'all' ||  (searchedValue !== '' &&  !product.name.toLowerCase().includes(searchedValue) )"  -->
+    <!-- [ngClass]="{'card':(product.available.toString() === currentFilter || currentFilter === 'all') && (searchedValue === '' ||  product.name.toLowerCase().includes(searchedValue) ),'coming-soon':product.discount ,'col-md-3':(product.available.toString() === currentFilter || currentFilter === 'all') && (searchedValue === '' ||  product.name.toLowerCase().includes(searchedValue) ),'col-6':(product.available.toString() === currentFilter || currentFilter === 'all') && (searchedValue === '' ||  product.name.toLowerCase().includes(searchedValue) ),'m-3':(product.available.toString() === currentFilter || currentFilter === 'all') && (searchedValue === '' ||  product.name.toLowerCase().includes(searchedValue) )}" -->
+    <div class="d-flex justify-content-center gap-5 row" >
+        <!-- style bug fix -->
+        <ng-container  *ngFor="let product of products; let i=index">
+            <app-product class="card col-md-3 col-6 mt-3" [ngClass]="{'coming-soon' :product.discount}"    (click)="selectedProduct(product)" #ProductComponent *ngIf="(product.available.toString() === currentFilter || currentFilter === 'all') && (searchedValue === '' ||  product.name.toLowerCase().includes(searchedValue) )"  [product]="product" [currentFilter]="currentFilter">
+            </app-product>
+        </ng-container>
+</div>
+

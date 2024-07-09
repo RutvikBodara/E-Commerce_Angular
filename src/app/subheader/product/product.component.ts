@@ -14,10 +14,13 @@ export class ProductComponent {
   {
     id:number,
     name:string,
+    available:boolean,
     description:string,
     price:number,
     category:string,
     discount?:number,
     imageUrl:string,
   };
+  @Input()
+  currentFilter:string="all"
 }
