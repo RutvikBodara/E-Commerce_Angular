@@ -7,20 +7,25 @@
 </app-filter>
 <app-checkout [currentProductDetail] = "ProductDetail"  *ngIf="ProductDetail !== undefined">
 </app-checkout>
-<!-- 
-<app-featured-brand>
-    <h1 class="title">Brand1</h1>
-    <button class="typebtn btn btn-primary">Contact Us</button>
+
+<app-featured-brand [name]="'John'">
+    <h1 class="title" #brandName>Brand1</h1>
+    <button class="typebtn btn btn-primary" (click) = "contact()">Contact Us</button>
 </app-featured-brand>
-<app-featured-brand>
+
+<app-featured-brand [name]="'Jorden'">
+    <h1 class="title" #brandName>Brand1</h1>
+    <button class="typebtn btn btn-primary" (click) = "contact()">Contact Us</button>
+</app-featured-brand>
+<!-- <app-featured-brand>
     <h1 class="title">Brand2</h1>
     <button class="typebtn btn btn-primary">Visit Us</button>
 </app-featured-brand>
 <app-featured-brand>
     <h1 class="title">Brand3</h1>
     <button class="typebtn btn btn-primary">Buy now</button>
-</app-featured-brand> -->
-<!-- <ng-template #demoTemplate>
+</app-featured-brand>
+<ng-template #demoTemplate>
     <p>i am here to learn angular</p>
 </ng-template>
 <div *ngTemplateOutlet ="demoTemplate">

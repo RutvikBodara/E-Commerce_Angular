@@ -1,4 +1,4 @@
-import { Component, ElementRef, QueryList, viewChild, ViewChild, ViewChildren, viewChildren } from '@angular/core';
+import { Component, ContentChild, contentChild, ElementRef, QueryList, viewChild, ViewChild, ViewChildren, viewChildren } from '@angular/core';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { CommonModule } from '@angular/common';
 import { ProductComponent } from './product/product.component';
@@ -6,6 +6,7 @@ import { FilterComponent } from './filter/filter.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { product } from '../../Model/product';
 import { FeaturedBrandComponent } from './featured-brand/featured-brand.component';
+import { identifierName } from '@angular/compiler';
 // @Component({
 //   selector: 'app-subheader',
 //   standalone: true,
@@ -102,12 +103,24 @@ export class SubheaderComponent {
   selectedProduct(product){
     this.ProductDetail = product
   }
+  @ViewChildren(FeaturedBrandComponent) FeaturedBrandTest :QueryList<ElementRef>
 
-  @ViewChildren('DemoChild') DemoChilds :QueryList<ElementRef>
+  // @ViewChildren('DemoChild') DemoChilds :QueryList<ElementRef>
 
-  Run(){
-    this.DemoChilds.forEach((item)=>{
-      console.log(item.nativeElement.value)
+  // Run(){
+  //   this.DemoChilds.forEach((item)=>{
+  //     console.log(item.nativeElement.value)
+  //   })
+  // }
+
+  // //accessing ng-content value in the parent element threw viewchild
+  // @ViewChild('brandName') firstbrand :ElementRef
+  contact(){
+    // console.log(this.firstbrand)
+
+    this.FeaturedBrandTest.forEach((item)=>{
+      console.log(item)
     })
+    console.log("uo")
   }
 }
