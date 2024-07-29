@@ -23,4 +23,5 @@ export class ProductComponent {
   };
   @Input()
   currentFilter:string="all"
+  
 }
