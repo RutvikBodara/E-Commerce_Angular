@@ -9,6 +9,37 @@
 <div id="demoof" #demoof>{{ofValue}}</div>
 <div id="fromdemo">{{formValue}}</div>
 <!-- <app-subheader></app-subheader> -->
+
+<div>replay demo</div>
+<button (click)="AddVideo()" >Add Video</button>
+<div class="row">
+    <div class="col-md-4" id="user1">
+            <button class="btn" (click)="changeUser1()" [ngClass]="user1Subscribe? 'btn-danger': 'btn-success'">{{user1Subscribe?'unsubscribe channel' : 'subscribe channel' }}  </button>
+    </div> 
+    <div class="col-md-4" id="user2">
+            <button class="btn" (click)="changeUser2()" [ngClass]="user2Subscribe? 'btn-danger': 'btn-success'">{{user2Subscribe?'unsubscribe channel' : 'subscribe channel' }}  </button>
+    </div>
+</div>
+
+<div class="asyncdemo">
+    <div class="text-primary">{{asyncValue}}</div>
+    <button class="btn btn-outline-primary" (click)="asyncCompleted()">CompletedAsync</button>
+</div>
+
+<select class="form-select" aria-label="Default select example" #name>
+    <option selected>Open this select menu</option>
+    <option value="1">john</option>
+    <option value="2">dow</option>
+    <option value="3">jay</option>
+</select>
+
+<select class="form-select" aria-label="Default select example" #color>
+    <option selected>Open this select menu</option>
+    <option value="1">red</option>
+    <option value="2">greeen</option>
+    <option value="3">white</option>
+</select>
+
 <div app-subheader>
 </div>
 <!-- <div class="app-subheader"></div> -->

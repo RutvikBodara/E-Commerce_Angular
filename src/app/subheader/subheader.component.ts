@@ -106,7 +106,6 @@ export class SubheaderComponent {
   @ViewChildren(FeaturedBrandComponent) FeaturedBrandTest :QueryList<ElementRef>
 
   // @ViewChildren('DemoChild') DemoChilds :QueryList<ElementRef>
-
   // Run(){
   //   this.DemoChilds.forEach((item)=>{
   //     console.log(item.nativeElement.value)
